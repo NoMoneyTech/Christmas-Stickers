@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<official-account></official-account>
+<view class="container">
+  <view class='canvas-cont'>
+    <canvas id="canvas" disable-scroll="{{true}}" class='canvas' canvas-id='decorate' bindtouchstart='touchStart' bindtouchmove='touchMove' bindtouchend='touchEnd' hidden="{{userAvatar == null}}"></canvas>
+    <view hidden='{{userAvatar != null}}' id='add-user' class='add-user' bindtap='show'>
+      <image src="/images/upload.jpg" mode='widthFix'></image>
+    </view>
+    <view class='user-hundle'>
+      <view class='hundle' bindtap='deleteAvatar'>
+        <image src="/images/close.png" mode='widthFix'></image>
+      </view>
+      <view class='hundle success' bindtap='saveCanvas'>
+        <image src="/images/success.png" mode='widthFix'></image>
+      </view>
+    </view>
+  </view>
+  <scroll-view class='bottom' scroll-x="{{true}}">
+    <view wx:for="{{imgList}}" wx:for-item="item" wx:key="{{item}}" hidden="{{idx != index}}">
+      <view class='item-cont'>
+        <view class='item' wx:for="{{item.img}}" wx:for-item="img" wx:key="{{img}}" data-item="{{img}}" bindtap="hundle">
+          <image src="{{img}}" mode='widthFix'></image>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class='bottom-bar'>
+    <view wx:for="{{imgList}}" wx:for-item="item" wx:key="{{item}}" class='bar-item {{idx==index?"selected":""}}' data-idx="{{index}}" bindtap='changeIdx'>
+      <image src="{{item.icon}}" mode='widthFix'></image>
+    </view>
+  </view>
+  <view class='tabbar-bg {{tabbarState?"show":""}}'>
+    <view class='tabbar'>
+
+      <view bindtap='chooseImage'>使用相册图片</view>
+      <view class='cancel' bindtap='cancel'>取消</view>
+    </view>
+  </view>
+
+</view>

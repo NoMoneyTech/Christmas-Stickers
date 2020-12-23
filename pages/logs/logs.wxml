@@ -1,0 +1,36 @@
+<!--aboutme.wxml-->
+<official-account></official-account>
+<view class="about">
+  <view class="about-wei">
+  <view class="about-img">
+    <image src="{{img}}" class="in-img" mode="cover" model="scaleToFill">
+    </image>
+  </view>
+
+  <view class="about-title">{{title}}</view>
+</view>
+
+  <view class="about-intro">{{intro}}</view>
+  <view class="about-intro1">{{intro1}}</view>
+
+
+<view class="about-all">
+  <view class="about-contact">{{contact}}</view>
+  <view>邮箱：{{email}}</view>
+  <view>微信公众号：{{mobile}}</view>
+</view>
+
+
+<button open-type="contact"   
+style="position:relative; padding:3%;width:75%;height:10%;font-size:100%;background-color:#07c160;color:white;margin-top:3%; margin-bottom:3%;  font-size: 40rpx;  border-radius: 25rpx;">
+性感客服 ❤ 在线陪聊</button>
+
+
+<view class="copyright">
+<view>Copyright©1995-2020 没钱科技 </view>
+<view>wwww.nomoneytech.com</view>
+<view>☁ 没钱云支持IPV666网络 ☁</view>
+
+</view>
+
+</view>
